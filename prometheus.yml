@@ -1,5 +1,5 @@
 scrape_configs:
-  - job_name: 'prometheus-net'
+  - job_name: 'shoehub'
     scrape_interval: 5s
     static_configs:
       - targets: ['']
