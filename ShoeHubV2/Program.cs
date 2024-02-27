@@ -20,7 +20,6 @@ foreach (var shoeType in shoeTypes)
 {
     var soldValue = randomGenerator.Next(10, 100);
     salesMetric = Metrics.CreateCounter($"shoehub_sales_{shoeType}", $"Sales of {shoeType}.");
-    salesMetric.WithLabels("sales");
     salesMetric.Inc(soldValue);
 }
 
@@ -30,7 +29,6 @@ foreach (var countryCode in countryCodes)
     var paymentValue = randomGenerator.Next(1000);
 
     paymentMetric = Metrics.CreateGauge($"shoehub_{countryCode}_payments_{paymentMethod}", $"Payment in {countryCode}");
-    paymentMetric.WithLabels("payment");
     paymentMetric.Set(paymentValue);
 }
 
