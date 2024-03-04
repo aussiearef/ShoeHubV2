@@ -7,12 +7,12 @@ This repository belongs to an online course called **"Observability with Grafana
 
 To access the metrics, run the application using the executable file provided under the **Releases** folder relevant to your operating system (i.e., ShoeHubV2.exe in Windows). If you prefer to use the provided Docker container, follow the instructions below.
 
-The application includes a built-in web server, so once the application is run, you will see the address where you can see the metrics under __/__ endpoint.
+The application includes a built-in web server, so once the application is run, you will see the address where you can see the metrics under __/metrics__ endpoint.
 
 
 [![Example of where to find the host address and port](https://github.com/aussiearef/ShoeHubV2/blob/main/host-example.png?raw=true)](https://github.com/aussiearef/ShoeHubV2/blob/main/host-example.png?raw=true)
 
-In the above example, you must scrape HTTP://locahost:5000/ to see the metrics.
+In the above example, you must scrape HTTP://locahost:5000/metrics to see the metrics.
 
 Use the prometheus.yml file that is provided in the repository. It contains a scrape configuration that you can use in Prometheus:
 
