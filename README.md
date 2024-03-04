@@ -5,14 +5,14 @@
 
 This repository belongs to an online course called **"Observability with Grafana, Prometheus and Loki"**. The code generates random data points for an imaginary company called ShoeHub. 
 
-To access the metrics, run the application using the executable file provided under the **Releases** folder which is relevant to your operating system (i.e., ShoeHubV2.exe in Windows). 
+To access the metrics, run the application using the executable file provided under the **Releases** folder relevant to your operating system (i.e., ShoeHubV2.exe in Windows). If you prefer to use the provided Docker container, follow the instructions below.
 
-The application includes a built-in web server, so once the application is run, you will see the address where you can see the metrics under __/metrics__ endpoint.
+The application includes a built-in web server, so once the application is run, you will see the address where you can see the metrics under __/__ endpoint.
 
 
 [![Example of where to find the host address and port](https://github.com/aussiearef/ShoeHubV2/blob/main/host-example.png?raw=true)](https://github.com/aussiearef/ShoeHubV2/blob/main/host-example.png?raw=true)
 
-In the above example, you must scrape HTTP://locahost:5000/metrics to see the metrics.
+In the above example, you must scrape HTTP://locahost:5000/ to see the metrics.
 
 Use the prometheus.yml file that is provided in the repository. It contains a scrape configuration that you can use in Prometheus:
 
@@ -21,14 +21,36 @@ scrape_configs:
   - job_name: 'shoehub'
     scrape_interval: 5s
     static_configs:
-      - targets: ['']
+      - targets: ['http://localhost:80']
 ```
+
+### Running the Docker Container
+
+If you have Docker Desktop running, pull the provided Docker image:
+
+```
+  docker pull aussiearef/shoehub
+```
+
+By default, the metric endpoint is listening on port __80__ . If you want to assign a different port to the metrics endpoint, use the -p argument when running the __docker run__ command:
+
+```
+  docker run -p <local port>:80 -i aussiearef/shoehub
+```
+
+Example:
+
+```
+  docker run -p 8080:80 -i aussiearef/shoehub
+```
+
+Please do not forget to update your scraping rule in Prometheus so it scrapes the correct port.
 
 ### Building the code
 
 The code is written in .NET 8 as a minimal web API. If you wish to build the code, [download the .NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-.NET 8 is cross-platform, so you can download and install it on Windows, Mac and Linux.
+.NET 8 is cross-platform so you can download and install it on Windows, Mac and Linux.
 
-Then clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then run **dotnet run**
+Then, clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then run **dotnet run**
 
 
