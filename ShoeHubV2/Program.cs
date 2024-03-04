@@ -37,6 +37,6 @@ foreach (var countryCode in countryCodes)
 
 app.UseHttpsRedirection();
 app.UseHttpMetrics();
-app.MapMetrics().DisableRateLimiting();
+app.MapMetrics(pattern:"/").DisableRateLimiting();
 
 app.Run();
