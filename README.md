@@ -32,19 +32,19 @@ If you have Docker Desktop running, pull the provided Docker image:
   docker pull aussiearef/shoehub
 ```
 
-By default, the metric endpoint is listening on port __80__ . If you want to assign a different port to the metrics endpoint, use the -p argument when running the __docker run__ command:
+By default, the metric endpoint listens on port __8080__. If you want to assign a different port to the metrics endpoint, use the -p argument when running the __docker run__ command:
 
 ```
-  docker run -p <local port>:80 -i aussiearef/shoehub
+  docker run -p <local port>:8080 -i aussiearef/shoehub
 ```
 
 Example:
 
 ```
-  docker run -p 8080:80 -i aussiearef/shoehub
+  docker run -p 8020:80 -i aussiearef/shoehub
 ```
 
-Please do not forget to update your scraping rule in Prometheus so it scrapes the correct port.
+Please remember to update your scraping rule in Prometheus so it scrapes the correct port.
 
 ### Building the code
 
