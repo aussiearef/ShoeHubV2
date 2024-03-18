@@ -15,10 +15,13 @@ app.MapMetrics().DisableRateLimiting();
 
 app.Use(async (context, next) =>
 {
+    
+    
     foreach (var shoeType in shoeTypes)
     {
         var soldValue = randomGenerator.Next(10, 100);
-        var salesMetric = Metrics.CreateCounter($"shoehub_sales_{shoeType}", $"Sales of {shoeType}.");
+        var salesMetric = Metrics.CreateCounter($"shoehub_sales", "", "ShoeType")
+            .WithLabels(shoeType);
         salesMetric.Inc(soldValue);
     }
 
@@ -27,7 +30,8 @@ app.Use(async (context, next) =>
         foreach (var paymentMethod in paymentMethods)
         {
             var paymentValue = randomGenerator.Next(1000);
-            var paymentMetric = Metrics.CreateGauge($"shoehub_{countryCode}_payments_{paymentMethod}", $"Payment in {countryCode} using {paymentMethod}.");
+            var paymentMetric = Metrics.CreateGauge($"shoehub_payments", $"", "CountryCode", "PaymentMethod")
+                .WithLabels(countryCode, paymentMethod);
             paymentMetric.Set(paymentValue);
         }
     }
