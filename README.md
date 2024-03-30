@@ -53,4 +53,16 @@ The code is written in .NET 8 as a minimal web API. If you wish to build the cod
 
 Then, clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then enter  "**dotnet run**" and press Enter or Return key.
 
+## Docker Compose For Launching Grafana
+
+This repository also includes a dockercompose.yml file (under /Docker directory), which can be used to launch Grafana, Prometheus and Loki using Docker in a couple of minutes. Download the dockercompose.yml file and change the current directory in a Terminal window to the one where the dockercompose.yml file is. 
+Then run
+
+```
+docker compose -f dockrecompose.yml up -d
+```
+
+This way, you will connect three containers via a single Docker network. You must log in to Grafana and manually add Prometheus and Loki as data sources.
+It is needless to say that you must have Docker Desktop installed on your computer before you can launch Grafana and Prometheus using Docker.
+
 
