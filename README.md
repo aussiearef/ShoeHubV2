@@ -32,7 +32,7 @@ If you have Docker Desktop running, pull the provided Docker image:
   docker pull aussiearef/shoehub
 ```
 
-By default, the metric endpoint listens on port __8080__. If you want to assign a different port to the metrics endpoint, use the -p argument when running the __docker run__ command:
+The metric endpoint listens on port __8080__by default. If you want to assign a different port to the metrics endpoint, use the -p argument when running the __docker run__ command:
 
 ```
   docker run -p <local port>:8080 -i aussiearef/shoehub
@@ -44,13 +44,13 @@ Example:
   docker run -p 8020:80 -i aussiearef/shoehub
 ```
 
-Please remember to update your scraping rule in Prometheus so it scrapes the correct port.
+Please update your scraping rule in Prometheus so it scrapes the correct port.
 
 ### Building the code
 
 The code is written in .NET 8 as a minimal web API. If you wish to build the code, [download the .NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-.NET 8 is cross-platform so you can download and install it on Windows, Mac and Linux.
+.NET 8 is cross-platform, so that you can download and install it on Windows, Mac and Linux.
 
-Then, clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then run **dotnet run**
+Then, clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then enter  "**dotnet run**" and press Enter or Return key.
 
 
