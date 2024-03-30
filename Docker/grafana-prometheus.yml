@@ -6,14 +6,14 @@ services:
     networks:
       - monitoring
     ports:
-      - 9091:9090
+      - 9090:9090
 
   grafana:
     image: grafana/grafana-oss  # use grafana/grafana-enterprise for Grafana Enterprise
     networks:
       - monitoring
     ports:
-      - 3002:3000
+      - 3000:3000
     environment:
       GF_DATASOURCE: prometheus
 
