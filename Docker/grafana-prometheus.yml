@@ -5,20 +5,15 @@ services:
     image: prom/prometheus
     networks:
       - monitoring
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml  # mount for config
     ports:
-      - 9090:9090
-    command: ["prometheus", "-config.file=/etc/prometheus/prometheus.yml"]
+      - 9091:9090
 
   grafana:
     image: grafana/grafana-oss  # use grafana/grafana-enterprise for Grafana Enterprise
     networks:
       - monitoring
-    volumes:
-      - /var/lib/grafana:/var/lib/grafana  # Optional volume for persistence
     ports:
-      - 3000:3000
+      - 3002:3000
     environment:
       GF_DATASOURCE: prometheus
 
@@ -26,8 +21,6 @@ services:
     image: grafana/loki:latest
     networks:
       - monitoring
-    volumes:
-      - /var/lib/grafana/loki/data:/data  # Persistent storage for Loki data
     ports:
       - 3100:3100  # Loki UI port
 
