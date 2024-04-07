@@ -63,7 +63,7 @@ docker compose -f dockrecompose.yml up -d
 ```
 
 This way, you will connect three containers via a single Docker network. You must log in to Grafana and manually add Prometheus and Loki as data sources.
-It is needless to say you must have Docker Desktop installed on your computer before you can launch Grafana and Prometheus using Docker.
+It is needless to say, you must have Docker Desktop installed on your computer before you can launch Grafana and Prometheus using Docker.
 
 
 ## More Free Courses on YouTube
@@ -72,6 +72,10 @@ It is needless to say you must have Docker Desktop installed on your computer be
 
 Subscribe to the Free Technology and Technology Management Courses channel for free lectures about Coding, DevOps, and Technology Management. [Here is the link to the YouTube channel](http://www.youtube.com/@FreeTechnologyLectures).
 
+## Buy me a coffee ☕
 
+If you find my work helpful, consider treating me by buying me a coffee!
+
+<a href="https://ko-fi.com/arefkarimi"><img src="https://storage.ko-fi.com/cdn/kofi2.png?v=3" alt="ko-fi" height="36"></a>
 
 
