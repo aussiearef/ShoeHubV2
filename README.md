@@ -55,7 +55,7 @@ Then, clone the code, and in Terminal (or Command Prompt), navigate to the **Sho
 
 ## Docker Compose For Launching Grafana
 
-This repository also includes a dockercompose.yml file (under /Docker directory), which can be used to launch Grafana, Prometheus and Loki using Docker in a couple of minutes. Download the dockercompose.yml file and change the current directory in a Terminal window to the one where the dockercompose.yml file is. 
+This repository also includes a dockercompose.yml file (under /Docker directory), which can be used to launch Grafana, Prometheus and Loki using Docker in a few minutes. Download the dockercompose.yml file and change the current directory in a Terminal window to the one where the dockercompose.yml file is. 
 Then run
 
 ```
@@ -63,6 +63,15 @@ docker compose -f dockrecompose.yml up -d
 ```
 
 This way, you will connect three containers via a single Docker network. You must log in to Grafana and manually add Prometheus and Loki as data sources.
-It is needless to say that you must have Docker Desktop installed on your computer before you can launch Grafana and Prometheus using Docker.
+It is needless to say you must have Docker Desktop installed on your computer before you can launch Grafana and Prometheus using Docker.
+
+
+## More Free Courses on YouTube
+
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=flat&logo=youtube)](http://www.youtube.com/@FreeTechnologyLectures)
+
+Subscribe to the Free Technology and Technology Management Courses channel for free lectures about Coding, DevOps, and Technology Management. [Here is the link to the YouTube channel](http://www.youtube.com/@FreeTechnologyLectures).
+
+
 
 
