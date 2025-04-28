@@ -1,4 +1,4 @@
-# Observability with Grafana, Prometheus and Loki
+# Observability with Grafana, Prometheus 
 ## The ShoeHub  (Prometheus Exporter)
 
 [![Grafana, Graphite, and StatsD](https://img-c.udemycdn.com/course/750x422/1473698_386a_9.jpg)](https://www.udemy.com/course/grafana-graphite-and-statsd-visualize-metrics/?referralCode=F9360D03CB430529BEAD)
