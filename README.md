@@ -48,7 +48,7 @@ Please update your scraping rule in Prometheus so it scrapes the correct port.
 
 ### Building the code
 
-The code is written in .NET 8 as a minimal web API. If you wish to build the code, [download the .NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+You don't need to build the code, unless you want to modify it. The code is written in .NET 8 as a minimal web API. If you wish to build the code, [download the .NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 .NET 8 is cross-platform, so that you can download and install it on Windows, Mac and Linux.
 
 Then, clone the code, and in Terminal (or Command Prompt), navigate to the **ShoeHubV2** folder. Then enter  "**dotnet run**" and press Enter or Return key.
@@ -72,10 +72,6 @@ It is needless to say, you must have Docker Desktop installed on your computer b
 
 Subscribe to the Free Technology and Technology Management Courses channel for free lectures about Coding, DevOps, and Technology Management. [Here is the link to the YouTube channel](http://www.youtube.com/@FreeTechnologyLectures).
 
-## Buy me a coffee ☕
 
-If you find my work helpful, consider treating me by buying me a coffee!
-
-<a href="https://ko-fi.com/arefkarimi"><img src="https://storage.ko-fi.com/cdn/kofi2.png?v=3" alt="ko-fi" height="36"></a>
 
 
