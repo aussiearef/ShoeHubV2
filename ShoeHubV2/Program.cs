@@ -4,12 +4,14 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var logPath = Environment.GetEnvironmentVariable("LOG_PATH") ?? "/app/logs/log.txt";
 builder.Host.UseSerilog((context, configuration) =>
 {
     configuration
         .Enrich.FromLogContext()
         .WriteTo.Console(
-            outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}");
+            outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
+        .WriteTo.File(logPath, rollingInterval: RollingInterval.Day);
 });
 
 var app = builder.Build();
